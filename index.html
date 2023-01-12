@@ -21,33 +21,69 @@
             }
             else if(playerChoice == "rock") {
                 if (computerSelection == "scissors") {
-                    return "You win! Rock beats Scissors"
+                    return "Player"
+                    console.log("You win! Rock beats Scissors")
                 }
                 else {
-                    return "You lose! Paper beats Rock"
+                    return "Computer"
+                    console.log("You lose! Paper beats Rock")
                 }
             }
             else if(playerChoice == "paper") {
                 if (computerSelection == "rock") {
-                    return "You win! Paper beats Rock"
+                    return "Player"
+                    console.log("You win! Paper beats Rock")
                 }
                 else {
-                    return "You lose! Scissors beats Rock"
+                    return "Computer"
+                    console.log("You lose! Scissors beats Rock")
                 }
             }
             else if(playerChoice == "scissors") {
                 if (computerSelection == "paper") {
-                    return "You win! Scissors beat Paper"
+                    return "Player"
+                    console.log("You win! Scissors beat Paper")
                 }
                 else {
-                    return "You lose! Rock beats Scissors"
+                    return "Computer"
+                    console.log("You lose! Rock beats Scissors")
                 }
             }
         }
 
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+        function game() {
+            playerScore = 0
+            computerScore = 0
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Rock, paper, or scissors?")
+                const computerSelection = getComputerChoice();
+                result = playRound(playerSelection, computerSelection)
+                console.log(result + " won!")
+
+                if (result == "Player") {
+                    playerScore++
+                }
+                else if (result == "Computer") {
+                    computerScore++
+                }
+            }
+            if (playerScore == computerScore) {
+                console.log("It's a tie!")
+            }
+            else if (playerScore > computerScore) {
+                console.log("You win!")
+                console.log("Your score: " + playerScore)
+                console.log("Computer Score: " + computerScore)
+            }
+            else if (computerScore > playerScore) {
+                console.log("Computer wins!")
+                console.log("Your score: " + playerScore)
+                console.log("Computer Score: " + computerScore)
+            }
+
+        }
+
+        
     </script>
 </body>
 </html>
